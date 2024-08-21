@@ -22,6 +22,9 @@ export class Server {
 
   
   async start() {
+// middelware
+    this.app.use( express.json() )
+    this.app.use( express.urlencoded({extended:true}) ) //url encoded
 
     this.app.use(this.routes);
 
